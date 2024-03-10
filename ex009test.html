@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Nacionalidade</title>
+    <style>
+      body {
+        background-color: rgb(195, 195, 195);
+        font: bold 20px arial;
+      }
+      #nacio {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Informe o país onde você mora:</h1>
+    <input type="text" id="txtp" placeholder="Digite o nome do país">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="nacio"></div>
+
+    <script>
+        
+        function verificar() {
+        var país = document.getElementById('txtp').value
+        var res = document.getElementById('nacio')
+        if (país=="Brasil") {
+            res.innerText = `Você é brasileiro`
+
+        } else {
+            res.innerText = `Você é estrangeiro`
+        } 
+        }
+
+    </script>
+  </body>
+</html>

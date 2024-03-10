@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Somando Números</title>
+    <style>
+      body {
+        font: normal 20pt Arial;
+        background-color: aquamarine;
+      }
+      input {
+        font: normal 15pt Arial;
+        width: 75pt;
+        text-align: center;
+        margin-top: 10px;
+      }
+      input.soma {
+        height: 30pt;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.433);
+        width: 40pt;
+        border-width: 1px;
+      }
+
+      #botao {
+        height: 35pt;
+        width: 40pt;
+        font: normal 15pt arial;
+        background-color: #04ff43;
+        border-width: 1px;
+        margin-left: 10px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.433);;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" class="soma" id="txtn1" /> +
+    <input type="number" name="txtn1" class="soma" id="txtn2" />
+    <input type="button" value="=" id="botao" onclick="somar()" />
+    <br />
+    <br />
+    <div id="res">Resultado</div>
+    <script>
+      var button = window.document.getElementById("botao");
+      button.addEventListener("mouseenter", entrar);
+      button.addEventListener("mouseout", sair);
+
+      function entrar() {
+        button.style.background = "#86f9a3";
+        button.style.width = "44pt";
+        button.style.height = "39pt";
+      }
+
+      function sair() {
+        button.style.background = "#04ff43";
+        button.style.width = "40pt";
+        button.style.height = "35pt";
+      }
+
+      function somar() {
+        var tn1 = window.document.getElementById("txtn1");
+        var tn2 = window.document.querySelector("input#txtn2");
+        var res = document.querySelector("div#res");
+        var n1 = Number.parseInt(tn1.value);
+        var n2 = Number.parseInt(tn2.value);
+        var s = n1 + n2;
+        res.innerHTML = `A soma entre ${n1} e ${n2} resulta em <strong>${s}<strong>.`;
+      }
+    </script>
+  </body>
+</html>
